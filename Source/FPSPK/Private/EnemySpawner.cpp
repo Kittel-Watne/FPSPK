@@ -31,7 +31,7 @@ void AEnemySpawner::Tick(float DeltaTime)
 		float SpawnZ = 100.0f;
 		FVector SpawnPosition = FVector(SpawnX, SpawnY, SpawnZ);
 
-		//Spawning Raindrop
+		//Spawning Enemy
 		AEnemyActor* Actor01 = GetWorld()->SpawnActor<AEnemyActor>(EnemyClass, SpawnPosition, FRotator::ZeroRotator);
 		SpawnDelay = 0.0f;
 		if (GEngine)
