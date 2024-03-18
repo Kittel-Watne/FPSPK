@@ -34,13 +34,17 @@ void AEnemySpawner::Tick(float DeltaTime)
 		//Spawning Enemy
 		AEnemyActor* Actor01 = GetWorld()->SpawnActor<AEnemyActor>(EnemyClass, SpawnPosition, FRotator::ZeroRotator);
 		SpawnDelay = 0.0f;
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("AAAAAAAAAAAAAAAAAAA"));
+
+		//Checking for errors
+		//if (GEngine)
+		//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("AAAAAAAAAAAAAAAAAAA"));
 	}
 	else {
 		SpawnDelay += 0.1f;
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Waiting"));
+
+		//Checking for errors
+		//if (GEngine)
+		//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Waiting"));
 	}
 }
 

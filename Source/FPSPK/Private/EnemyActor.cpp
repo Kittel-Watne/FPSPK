@@ -2,6 +2,7 @@
 
 
 #include "EnemyActor.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AEnemyActor::AEnemyActor()
@@ -21,12 +22,17 @@ void AEnemyActor::BeginPlay()
 	Super::BeginPlay();
 	Mesh->SetEnableGravity(true);
 	
+	Player = UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetPawn();
 }
 
 // Called every frame
 void AEnemyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	float fEnemySpeed = 0.2f;
+	FVector Direction = Player->GetActorLocation() - GetActorLocation();
+	SetActorLocation(GetActorLocation() + (Direction * fEnemySpeed * DeltaTime));
 
 }
 

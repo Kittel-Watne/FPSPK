@@ -26,4 +26,6 @@ public:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyMesh")
 	UStaticMeshComponent* Mesh;
+
+	AActor* Player;
 };
